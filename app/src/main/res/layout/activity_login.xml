@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity"
+        android:background="@drawable/back1">
+
+    <EditText
+            android:layout_width="285dp"
+            android:layout_height="36dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextLoginUsername"
+            android:background="@drawable/input_bg" android:paddingLeft="20dp"
+            android:paddingTop="10dp" android:paddingRight="10dp" android:paddingBottom="10dp"
+            android:textColor="@color/colorWhite" android:textColorHint="@color/colorWhite" android:hint="Username"
+            android:drawableLeft="@drawable/ic_baseline_person_24" android:drawablePadding="10dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.209"/>
+    <TextView
+            android:text="Nexicare-Haven"
+            android:layout_width="254dp"
+            android:layout_height="56dp" android:id="@+id/textView"
+            android:textSize="34sp" android:textStyle="bold"
+            android:textColor="@color/purple_200" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintVertical_bias="0.094"/>
+    <TextView
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            android:textSize="34sp" android:textStyle="bold"
+            android:textColor="@color/colorWhite" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.128"/>
+    <EditText
+            android:layout_width="290dp"
+            android:layout_height="45dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editTextLoginPassword"
+            android:background="@drawable/input_bg" android:paddingLeft="20dp"
+            android:paddingTop="10dp" android:paddingRight="10dp" android:paddingBottom="10dp"
+            android:textColor="@color/colorWhite" android:textColorHint="@color/colorWhite" android:hint="Password"
+            android:drawableLeft="@drawable/ic_baseline_security_24" android:drawablePadding="10dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLoginUsername" android:layout_marginTop="32dp"
+            app:layout_constraintHorizontal_bias="0.495"/>
+    <Button
+            android:text="Login"
+            android:layout_width="272dp"
+            android:layout_height="45dp" android:id="@+id/buttonLogin"
+            android:background="@drawable/btn_bg" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLoginPassword" android:layout_marginTop="56dp"
+            app:layout_constraintHorizontal_bias="0.496"/>
+    <TextView
+            android:text="Register for New User"
+            android:layout_width="189dp"
+            android:layout_height="34dp" android:id="@+id/textViewNewUser"
+            android:textColor="@color/colorWhite" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+            android:layout_marginTop="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
