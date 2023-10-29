@@ -8,9 +8,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private DatabaseReference rootDatabaseref;
     EditText edUsername, edEmail, edPassword, edConfirm;
     Button btn;
     TextView tv;
@@ -22,10 +25,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         edUsername = findViewById(R.id.editTextRegUsername);
         edPassword = findViewById(R.id.editTextRegPassword);
-        edConfirm = findViewById(R.id.editTextRegConfirmPassword); // Corrected variable name
+        edConfirm = findViewById(R.id.editTextRegConfirmPassword);
         edEmail = findViewById(R.id.editTextRegUserEmail);
         btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewExistingUser);
+
+
+        rootDatabaseref= FirebaseDatabase.getInstance().getReference().child("Users");
 
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
