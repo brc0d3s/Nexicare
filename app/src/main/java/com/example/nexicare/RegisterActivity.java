@@ -8,12 +8,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class RegisterActivity extends AppCompatActivity {
 
-    private DatabaseReference rootDatabaseref;
+    private DatabaseReference rootDatabaseRef;
     EditText edUsername, edEmail, edPassword, edConfirm;
     Button btn;
     TextView tv;
@@ -30,8 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewExistingUser);
 
-
-        rootDatabaseref= FirebaseDatabase.getInstance().getReference().child("Users");
+        rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +49,25 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                if (username.length() == 0 || password.length() == 0 || confirm.length() == 0 || email.length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Please fill All details", Toast.LENGTH_SHORT).show();
+
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("Username", username);
+                hashMap.put("email", email);
+                hashMap.put("password", password);
+
+                if (username.isEmpty() || password.isEmpty() || confirm.isEmpty() || email.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please fill in all details", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (password.compareTo(confirm) == 0) {
-                        if (isValid(password)) {
-                            Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
+                    if (password.equals(confirm)) {
+                        if (isValidPassword(password)) {
+                            rootDatabaseRef.child(username).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(RegisterActivity.this, "Record Inserted", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Password must contain at least 8 characters, a letter, a digit, and a special symbol", Toast.LENGTH_SHORT).show();
                         }
@@ -65,32 +79,30 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    public static boolean isValidPassword(String password) {
+        int letterCount = 0;
+        int digitCount = 0;
+        int specialCount = 0;
 
-    public static boolean isValid(String passwordhere) {
-        int f1 = 0, f2 = 0, f3 = 0;
-        if (passwordhere.length() < 8) { // Corrected method name
+        if (password.length() < 8) {
             return false;
         } else {
-            for (int p = 0; p < passwordhere.length(); p++) {
-                if (Character.isLetter(passwordhere.charAt(p))) {
-                    f1 = 1;
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+                if (Character.isLetter(c)) {
+                    letterCount++;
+                } else if (Character.isDigit(c)) {
+                    digitCount++;
+                } else if (isSpecialCharacter(c)) {
+                    specialCount++;
                 }
             }
-            for (int r = 0; r < passwordhere.length(); r++) {
-                if (Character.isDigit(passwordhere.charAt(r))) {
-                    f2 = 1;
-                }
-            }
-            for (int s = 0; s < passwordhere.length(); s++) {
-                char c = passwordhere.charAt(s);
-                if (c >= 33 && c <= 46 || c == 64) {
-                    f3 = 1;
-                }
-            }
-            if (f1 == 1 && f2 == 1 && f3 == 1) { // Corrected variable name
-                return true;
-            }
-            return false;
+
+            return letterCount > 0 && digitCount > 0 && specialCount > 0;
         }
+    }
+
+    private static boolean isSpecialCharacter(char c) {
+        return (c >= 33 && c <= 46) || c == 64;
     }
 }
