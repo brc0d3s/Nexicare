@@ -14,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText edUsername, edPassword;
     Button btn;
     TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +30,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = edUsername.getText().toString();
                 String password = edPassword.getText().toString();
-                if(username.length()==0 || password.length()==0){
-                    Toast.makeText(getApplicationContext(),"Please fill All details",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show();
+                if (username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please fill in all details", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class ));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }
