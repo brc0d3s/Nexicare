@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496537484864",
+    "project_id": "nexicare-51c42",
+    "storage_bucket": "nexicare-51c42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496537484864:android:a69d68c8ae84f2e3a329a5",
+        "android_client_info": {
+          "package_name": "com.example.nexicare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-a20J-2RqMf5gLCU_OZyR0fFTowJnOYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
