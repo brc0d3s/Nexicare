@@ -1,18 +1,19 @@
 package com.example.nexicare;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -50,16 +51,18 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
 
-                HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("Username", username);
-                hashMap.put("email", email);
-                hashMap.put("password", password);
-
                 if (username.isEmpty() || password.isEmpty() || confirm.isEmpty() || email.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Please fill in all details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Please fill in all details", Toast.LENGTH_SHORT).show();
+                } else if (!isValidEmail(email)) {
+                    Toast.makeText(RegisterActivity.this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                 } else {
                     if (password.equals(confirm)) {
                         if (isValidPassword(password)) {
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("Username", username);
+                            hashMap.put("email", email);
+                            hashMap.put("password", password);
+
                             rootDatabaseRef.child(username).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -67,19 +70,18 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-
                         } else {
-                            Toast.makeText(getApplicationContext(), "Password must contain at least 8 characters, a letter, a digit, and a special symbol", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Password must contain at least 8 characters, a letter, a digit, and a special symbol", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(), "Password and Confirm password didn't match", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Password and Confirm password didn't match", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
     }
 
-    public static boolean isValidPassword(String password) {
+    public boolean isValidPassword(String password) {
         int letterCount = 0;
         int digitCount = 0;
         int specialCount = 0;
@@ -98,11 +100,16 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
 
-            return letterCount > 0 && digitCount > 0 && specialCount > 0;
+            return (letterCount > 0 && digitCount > 0 && specialCount > 0);
         }
     }
 
     private static boolean isSpecialCharacter(char c) {
         return (c >= 33 && c <= 46) || c == 64;
+    }
+
+    public boolean isValidEmail(String email) {
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        return Pattern.compile(emailPattern).matcher(email).matches();
     }
 }
