@@ -47,9 +47,9 @@ public class LoginActivity extends AppCompatActivity {
                                 String storedPassword = dataSnapshot.child("password").getValue(String.class);
 
                                 if (password.equals(storedPassword)) {
-                                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                    // Login successful, redirect to HomeActivity
+                                    // Pass the username to HomeActivity
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    intent.putExtra("username", username);
                                     startActivity(intent);
                                     finish(); // Finish LoginActivity to prevent going back to it
                                 } else {
