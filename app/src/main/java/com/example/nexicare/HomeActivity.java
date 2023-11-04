@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), welcomeMessage, Toast.LENGTH_SHORT).show();
         } else {
             // Handle the case where username is not passed correctly
-            Toast.makeText(getApplicationContext(), "Welcome, User", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
         }
 
 
