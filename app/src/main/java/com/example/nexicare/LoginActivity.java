@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btn;
     TextView tv;
 
-    DatabaseReference rootDatabaseRef;
+    private DatabaseReference rootDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
