@@ -27,11 +27,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        edUsername = findViewById(R.id.editTextRegUsername);
-        edPassword = findViewById(R.id.editTextRegPassword);
-        edConfirm = findViewById(R.id.editTextRegConfirmPassword);
-        edEmail = findViewById(R.id.editTextRegUserEmail);
-        btn = findViewById(R.id.buttonRegister);
+        edUsername = findViewById(R.id.editTextAppFullName);
+        edPassword = findViewById(R.id.editTextAppContactNumber);
+        edConfirm = findViewById(R.id.editTextAppFees);
+        edEmail = findViewById(R.id.editTextAppAddress);
+        btn = findViewById(R.id.buttonBookAppointment);
         tv = findViewById(R.id.textViewExistingUser);
 
         rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users");

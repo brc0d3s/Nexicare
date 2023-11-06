@@ -52,9 +52,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="LAB TEST"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="LAB TEST"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -84,9 +87,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/language"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="BUY MEDICINE"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="BUY MEDICINE"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -117,9 +123,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/chat"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="FIND DOCTOR"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="FIND DOCTOR"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -149,9 +158,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/calendar"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="HEALTH ARTICLES"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="HEALTH ARTICLES"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -182,9 +194,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/widgets"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="ORDER DETAILS"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="ORDER DETAILS"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -215,9 +230,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/info"/>
                 <TextView
-                    android:layout_height="wrap_content" android:text="LOGOUT"
-                    android:layout_width="wrap_content" android:textAlignment="center"
-                    android:textColor="@color/colorRed" android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:text="LOGOUT"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

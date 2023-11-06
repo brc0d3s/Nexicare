@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                             // Handle any errors here
+                            Toast.makeText(getApplicationContext(), "Connect to Internet", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
