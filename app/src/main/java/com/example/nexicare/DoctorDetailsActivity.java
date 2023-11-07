@@ -17,39 +17,51 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DoctorDetailsActivity extends AppCompatActivity {
-    private DatabaseReference doc1,doc2,doc3,doc4,doc5,doc7,do8,doc9,doc10;
-    private String[][] doctor_details1=
+    private DatabaseReference doc1, doc2, doc3, doc4, doc5, doc7, do8, doc9, doc10;
+
+    private String[][] doctor_details1 =
             {
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")},
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")}
+                    {"Brian", "A1", "5 years", "1234567890", "$80"},
+                    {"Peter", "A2", "8 years", "9876543210", "$76"},
+                    {"John", "A3", "10 years", "5555555555", "$90"},
+                    {"Sarah", "A4", "3 years", "3333333333", "$65"}
             };
 
-    private String[][] doctor_details2=
+    private String[][] doctor_details2 =
             {
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")},
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")}
+                    {"Erick", "B1", "7 years", "1111111111", "$20"},
+                    {"Emanuel", "B2", "6 years", "2222222222", "$46"},
+                    {"Michael", "B3", "9 years", "4444444444", "$75"},
+                    {"Olivia", "B4", "4 years", "6666666666", "$55"}
             };
 
-    private String[][] doctor_details3=
+    private String[][] doctor_details3 =
             {
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")},
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")}
+                    {"Allan", "C1", "12 years", "7777777777", "$95"},
+                    {"Karl", "C2", "15 years", "8888888888", "$80"},
+                    {"Jennifer", "C3", "18 years", "9999999999", "$100"},
+                    {"David", "C4", "20 years", "1231231234", "$105"}
             };
 
-    private String[][] doctor_details4=
+    private String[][] doctor_details4 =
             {
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")},
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")}
+                    {"Purity", "D1", "1 year", "2222333344", "$10"},
+                    {"Angel", "D2", "2 years", "1111222233", "$14"},
+                    {"Patricia", "D3", "3 years", "3333222211", "$19"},
+                    {"Daniel", "D4", "4 years", "4444111122", "$25"}
             };
 
-    private String[][] doctor_details5=
+    private String[][] doctor_details5 =
             {
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")},
-                    {"Doctor Name : "+getIntent().getStringExtra("doctorName"),"Hospital Address : "+getIntent().getStringExtra("hospitalAddress"),"Exp : "+getIntent().getStringExtra("experience"),"Mobile No : "+getIntent().getStringExtra("mobileNumber"),getIntent().getStringExtra("consultationFee")}
+                    {"Davis", "E1", "6 years", "7654321098", "$60"},
+                    {"Voxy", "E2", "5 years", "1234509876", "$46"},
+                    {"Susan", "E3", "7 years", "8765432109", "$55"},
+                    {"Richard", "E4", "8 years", "9876543210", "$70"}
             };
+
 
     TextView tv;
-    Button btn;
+    Button btnBACK;
     String[][] doctor_details = {};
     HashMap<String,String> item;
     ArrayList list;
@@ -60,7 +72,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_details);
 
         tv = findViewById(R.id.textViewDDTitle);
-        btn = findViewById(R.id.buttonDDBack);
+        btnBACK = findViewById(R.id.buttonLTBack);
 
 
 
@@ -85,20 +97,22 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         else
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btnBACK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DoctorDetailsActivity.this,FindDoctorActivity.class));
+                Intent intent = new Intent(DoctorDetailsActivity.this, FindDoctorActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
         list = new ArrayList();
         for (int i=0;i<doctor_details.length;i++){
             item = new HashMap<String,String>();
-            item.put("line1",doctor_details[i][0]);
-            item.put("line2",doctor_details[i][1]);
-            item.put("line3",doctor_details[i][2]);
-            item.put("line4",doctor_details[i][3]);
+            item.put("line1","Doctor Name:"+doctor_details[i][0]);
+            item.put("line2","Hospital Address:"+doctor_details[i][1]);
+            item.put("line3","Exp :"+doctor_details[i][2]);
+            item.put("line4","Mobile No:"+doctor_details[i][3]);
             item.put("line5","Cons Fees:"+doctor_details[i][4]+"/-");
             list.add(item);
         }
@@ -108,8 +122,17 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 new String[]{"line1","line2","line3","line4","line5"},
                 new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e}
                 );
-        ListView lst = findViewById(R.id.listViewDD);
+        ListView lst = findViewById(R.id.listViewLT);
         lst.setAdapter(sa);
+
+        btnBACK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DoctorDetailsActivity.this, FindDoctorActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
 
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

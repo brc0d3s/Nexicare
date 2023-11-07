@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Nexicare"
         tools:targetApi="31">
         <activity
+            android:name=".LabTestDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookAppointmentActivity"
             android:exported="false" />
         <activity
