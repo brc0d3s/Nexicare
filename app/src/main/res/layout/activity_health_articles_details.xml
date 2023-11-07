@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back1"
-    tools:context=".HealthArticlesActivity">
+    tools:context=".HealthArticlesDetailsActivity">
 
     <TextView
-        android:id="@+id/textViewHATitle"
+        android:id="@+id/textViewHADTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HEALTH ARTICLES"
+        android:text="DENTIST"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -35,26 +35,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045"/>
 
-    <ListView
-        android:id="@+id/listViewHA"
-        android:layout_width="344dp"
-        android:layout_height="523dp"
-        android:layout_marginStart="-40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="-40dp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewHATitle"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="@+id/textViewHATitle"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHATitle"/>
 
     <Button
         android:text="BACK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonHABack"
+        android:id="@+id/buttonHADBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewHAD"
         app:layout_constraintVertical_bias="0.69"/>
+
+    <ImageView
+        android:layout_width="358dp"
+        android:layout_height="526dp"
+        android:id="@+id/imageViewHAD"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHADTitle"
+        tools:srcCompat="@drawable/health1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
