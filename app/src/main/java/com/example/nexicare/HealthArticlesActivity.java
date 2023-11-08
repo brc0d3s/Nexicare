@@ -43,8 +43,8 @@ public class HealthArticlesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_articles);
 
-        btn = findViewById(R.id.buttonHABack);
-        lst = findViewById(R.id.listViewHA);
+        btn = findViewById(R.id.buttonODBack);
+        lst = findViewById(R.id.listViewOD);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

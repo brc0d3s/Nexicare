@@ -4,6 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back1"
     tools:context=".OrderDetailsActivity">
+
+    <TextView
+        android:id="@+id/textViewODTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORDER DETAILS"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_logo3"
+        app:layout_constraintVertical_bias="0.01999998"/>
+
+    <TextView
+        android:id="@+id/textView_logo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXICARE-HAVEN"
+        android:textColor="@color/purple_200"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045"/>
+
+    <ListView
+        android:id="@+id/listViewOD"
+        android:layout_width="344dp"
+        android:layout_height="523dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="-40dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewODTitle"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/textViewODTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewODTitle"/>
+
+    <Button
+        android:text="BACK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonODBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.69"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

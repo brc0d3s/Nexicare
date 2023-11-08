@@ -62,10 +62,10 @@ public class LabTestDetailsActivity extends AppCompatActivity {
 
                 // Data Insertion
                 HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("Username", username);
                 hashMap.put("Package", packageName);
                 hashMap.put("Description", description);
                 hashMap.put("Cost", cost);
-                hashMap.put("Username", username);
 
                 // Save the data to Firebase
                 String cartKey = rootDatabaseRef.push().getKey(); // Generates a unique key for the appointment
