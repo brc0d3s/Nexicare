@@ -36,6 +36,7 @@ public class HealthArticlesDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HealthArticlesDetailsActivity.this, HealthArticlesActivity.class));
+                finish();
             }
         });
     }

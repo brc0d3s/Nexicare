@@ -103,6 +103,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 Intent intent = new Intent(DoctorDetailsActivity.this, FindDoctorActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
         });
 

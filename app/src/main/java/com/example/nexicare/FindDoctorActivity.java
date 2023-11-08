@@ -20,6 +20,7 @@ public class FindDoctorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FindDoctorActivity.this,HomeActivity.class));
+                finish();
             }
         });
 

@@ -79,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
 
     public boolean isValidPassword(String password) {

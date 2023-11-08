@@ -52,6 +52,7 @@ public class LabTestDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LabTestDetailsActivity.this,LabTestActivity.class));
+                finish();
             }
         });
 
