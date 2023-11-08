@@ -21,42 +21,42 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
     private String[][] doctor_details1 =
             {
-                    {"Brian", "A1", "5 years", "1234567890", "$80"},
-                    {"Peter", "A2", "8 years", "9876543210", "$76"},
-                    {"John", "A3", "10 years", "5555555555", "$90"},
-                    {"Sarah", "A4", "3 years", "3333333333", "$65"}
+                    {"Brian", "A1", "5 years", "1234567890", "8800"},
+                    {"Peter", "A2", "8 years", "9876543210", "7665"},
+                    {"John", "A3", "10 years", "5555555555", "90234"},
+                    {"Sarah", "A4", "3 years", "3333333333", "657875"}
             };
 
     private String[][] doctor_details2 =
             {
-                    {"Erick", "B1", "7 years", "1111111111", "$20"},
-                    {"Emanuel", "B2", "6 years", "2222222222", "$46"},
-                    {"Michael", "B3", "9 years", "4444444444", "$75"},
-                    {"Olivia", "B4", "4 years", "6666666666", "$55"}
+                    {"Erick", "B1", "7 years", "1111111111", "8720"},
+                    {"Emanuel", "B2", "6 years", "2222222222", "5646"},
+                    {"Michael", "B3", "9 years", "4444444444", "2375"},
+                    {"Olivia", "B4", "4 years", "6666666666", "1255"}
             };
 
     private String[][] doctor_details3 =
             {
-                    {"Allan", "C1", "12 years", "7777777777", "$95"},
-                    {"Karl", "C2", "15 years", "8888888888", "$80"},
-                    {"Jennifer", "C3", "18 years", "9999999999", "$100"},
-                    {"David", "C4", "20 years", "1231231234", "$105"}
+                    {"Allan", "C1", "12 years", "7777777777", "9095"},
+                    {"Karl", "C2", "15 years", "8888888888", "2380"},
+                    {"Jennifer", "C3", "18 years", "9999999999", "9100"},
+                    {"David", "C4", "20 years", "1231231234", "7805"}
             };
 
     private String[][] doctor_details4 =
             {
-                    {"Purity", "D1", "1 year", "2222333344", "$10"},
-                    {"Angel", "D2", "2 years", "1111222233", "$14"},
-                    {"Patricia", "D3", "3 years", "3333222211", "$19"},
-                    {"Daniel", "D4", "4 years", "4444111122", "$25"}
+                    {"Purity", "D1", "1 year", "2222333344", "8710"},
+                    {"Angel", "D2", "2 years", "1111222233", "6714"},
+                    {"Patricia", "D3", "3 years", "3333222211", "4319"},
+                    {"Daniel", "D4", "4 years", "4444111122", "1225"}
             };
 
     private String[][] doctor_details5 =
             {
-                    {"Davis", "E1", "6 years", "7654321098", "$60"},
-                    {"Voxy", "E2", "5 years", "1234509876", "$46"},
-                    {"Susan", "E3", "7 years", "8765432109", "$55"},
-                    {"Richard", "E4", "8 years", "9876543210", "$70"}
+                    {"Davis", "E1", "6 years", "7654321098", "65560"},
+                    {"Voxy", "E2", "5 years", "1234509876", "0946"},
+                    {"Susan", "E3", "7 years", "8765432109", "5655"},
+                    {"Richard", "E4", "8 years", "9876543210", "3470"}
             };
 
 
