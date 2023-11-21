@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "496537484864",
-    "project_id": "nexicare-51c42",
-    "storage_bucket": "nexicare-51c42.appspot.com"
+    "project_number": "110570090882",
+    "firebase_url": "https://nexicare-2555f-default-rtdb.firebaseio.com",
+    "project_id": "nexicare-2555f",
+    "storage_bucket": "nexicare-2555f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:496537484864:android:a69d68c8ae84f2e3a329a5",
+        "mobilesdk_app_id": "1:110570090882:android:dad9e0321da0cebe68df9b",
         "android_client_info": {
           "package_name": "com.example.nexicare"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB-a20J-2RqMf5gLCU_OZyR0fFTowJnOYE"
+          "current_key": "AIzaSyD1TmiF0QNuVaGl6-w2VKrLb6oQUhr8Ick"
         }
       ],
       "services": {
