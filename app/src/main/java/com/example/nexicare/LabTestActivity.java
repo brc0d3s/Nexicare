@@ -65,6 +65,13 @@ public class LabTestActivity extends AppCompatActivity {
             }
         });
 
+        btnGoToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LabTestActivity.this, CartLabActivity.class));
+            }
+        });
+
         list = new ArrayList<>();
         for(int i = 0;i<packages.length;i++){
             item = new HashMap<String,String>();

@@ -73,6 +73,8 @@ public class LabTestDetailsActivity extends AppCompatActivity {
 
                 // Show a success message
                 Toast.makeText(LabTestDetailsActivity.this, "Added to cart", Toast.LENGTH_SHORT).show();
+
+                //startActivity(new Intent(LabTestDetailsActivity.this, LabTestActivity.class));
             }
         });
     }
