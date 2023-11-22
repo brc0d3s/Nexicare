@@ -21,7 +21,7 @@
             android:paddingBottom="10dp"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Username"
+            android:hint="@string/username"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.209"/>
     <TextView
-            android:text="Nexicare-Haven"
+            android:text="@string/nexicare_haven"
             android:layout_width="254dp"
             android:layout_height="56dp"
             android:id="@+id/textViewBMTitle"
@@ -69,7 +69,7 @@
             android:paddingBottom="10dp"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
-            android:hint="Password"
+            android:hint="@string/password"
             android:drawableLeft="@drawable/ic_baseline_security_24"
             android:drawablePadding="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
             android:layout_marginTop="32dp"
             app:layout_constraintHorizontal_bias="0.495"/>
     <Button
-            android:text="Login"
+            android:text="@string/login"
             android:layout_width="272dp"
             android:layout_height="48dp"
             android:id="@+id/buttonLogin"
@@ -89,7 +89,7 @@
             android:layout_marginTop="56dp"
             app:layout_constraintHorizontal_bias="0.496"/>
     <TextView
-            android:text="Register for New User"
+            android:text="@string/register_for_new_user"
             android:layout_width="189dp"
             android:layout_height="34dp"
             android:id="@+id/textViewNewUser"

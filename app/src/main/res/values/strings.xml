@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Nexicare</string>
+    <string name="username">Username</string>
+    <string name="nexicare_haven">Nexicare-Haven</string>
+    <string name="password">Password</string>
+    <string name="register_for_new_user">Register for New User</string>
+    <string name="login">Login</string>
 </resources>

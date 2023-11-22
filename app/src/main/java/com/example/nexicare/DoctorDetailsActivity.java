@@ -12,51 +12,52 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DoctorDetailsActivity extends AppCompatActivity {
-    private DatabaseReference doc1, doc2, doc3, doc4, doc5, doc7, do8, doc9, doc10;
+    private DatabaseReference rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
 
-    private String[][] doctor_details1 =
+    private final String[][] Family_Physicians =
             {
-                    {"Brian", "A1", "5 years", "1234567890", "8800"},
-                    {"Peter", "A2", "8 years", "9876543210", "7665"},
-                    {"John", "A3", "10 years", "5555555555", "90234"},
-                    {"Sarah", "A4", "3 years", "3333333333", "657875"}
+                    {"Dr. Davis", "A1", "6 years", "7654321098", "65560"},
+                    {"Dr. Peter", "A2", "8 years", "9876543210", "7665"},
+                    {"Dr. John", "A3", "10 years", "5555555555", "90234"},
+                    {"Dr. Sarah", "A4", "3 years", "3333333333", "657875"}
             };
 
-    private String[][] doctor_details2 =
+    private final String[][] dietician =
             {
-                    {"Erick", "B1", "7 years", "1111111111", "8720"},
-                    {"Emanuel", "B2", "6 years", "2222222222", "5646"},
-                    {"Michael", "B3", "9 years", "4444444444", "2375"},
-                    {"Olivia", "B4", "4 years", "6666666666", "1255"}
+                    {"Dr. Erick", "B1", "7 years", "1111111111", "8720"},
+                    {"Dr. Emanuel", "B2", "6 years", "2222222222", "5646"},
+                    {"Dr. Michael", "B3", "9 years", "4444444444", "2375"},
+                    {"Dr. Olivia", "B4", "4 years", "6666666666", "1255"}
             };
 
-    private String[][] doctor_details3 =
+    private final String[][] dentist =
             {
-                    {"Allan", "C1", "12 years", "7777777777", "9095"},
-                    {"Karl", "C2", "15 years", "8888888888", "2380"},
-                    {"Jennifer", "C3", "18 years", "9999999999", "9100"},
-                    {"David", "C4", "20 years", "1231231234", "7805"}
+                    {"Dr. Allan", "C1", "12 years", "7777777777", "9095"},
+                    {"Dr. Karl", "C2", "15 years", "8888888888", "2380"},
+                    {"Dr. Jennifer", "C3", "18 years", "9999999999", "9100"},
+                    {"Dr. David", "C4", "20 years", "1231231234", "7805"}
             };
 
-    private String[][] doctor_details4 =
+    private final String[][] surgeon =
             {
-                    {"Purity", "D1", "1 year", "2222333344", "8710"},
-                    {"Angel", "D2", "2 years", "1111222233", "6714"},
-                    {"Patricia", "D3", "3 years", "3333222211", "4319"},
-                    {"Daniel", "D4", "4 years", "4444111122", "1225"}
+                    {"Dr. Purity", "D1", "1 year", "2222333344", "8710"},
+                    {"Dr. Angel", "D2", "2 years", "1111222233", "6714"},
+                    {"Dr. Patricia", "D3", "3 years", "3333222211", "4319"},
+                    {"Dr. Daniel", "D4", "4 years", "4444111122", "1225"}
             };
 
-    private String[][] doctor_details5 =
+    private final String[][] cardiologists =
             {
-                    {"Davis", "E1", "6 years", "7654321098", "65560"},
-                    {"Voxy", "E2", "5 years", "1234509876", "0946"},
-                    {"Susan", "E3", "7 years", "8765432109", "5655"},
-                    {"Richard", "E4", "8 years", "9876543210", "3470"}
+                    {"Dr. Brian Omondi", "E1", "5 years", "1234567890", "8800"},
+                    {"Dr. Voxy", "E2", "5 years", "1234509876", "0946"},
+                    {"Dr. Susan", "E3", "7 years", "8765432109", "5655"},
+                    {"Dr. Richard", "E4", "8 years", "9876543210", "3470"}
             };
 
 
@@ -81,19 +82,19 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         tv.setText(title);
 
         if (title.compareTo("Family Physicians")==0)
-            doctor_details = doctor_details1;
+            doctor_details = Family_Physicians;
         else
         if (title.compareTo("Dietician")==0)
-            doctor_details = doctor_details2;
+            doctor_details = dietician;
         else
         if (title.compareTo("Dentist")==0)
-            doctor_details = doctor_details3;
+            doctor_details = dentist;
         else
         if (title.compareTo("Surgeon")==0)
-            doctor_details = doctor_details4;
+            doctor_details = surgeon;
         else
         if (title.compareTo("Cardiologists")==0)
-            doctor_details = doctor_details5;
+            doctor_details = cardiologists;
         else
 
 
